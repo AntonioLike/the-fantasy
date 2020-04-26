@@ -9,7 +9,7 @@ class DogTest {
 	@Test
 	void Dog() {
 		String name = "test";
-		assertTrue(new Dog(name).getName().equals(name));
-	}
+		Animal dog = new Dog(name);
+		assertTrue(dog instanceof Dog);	}
 
 }

@@ -23,7 +23,7 @@ class ArraysOperationsTest {
 	
 	@Test
 	void testMaxDoubleArray() {
-		assertTrue(ArraysOperations.min(new double[]{1.1,-3,-5.5})==1.1);
+		assertTrue(ArraysOperations.max(new double[]{1.1,-3,-5.5})==1.1);
 	}
 	
 	@Test

@@ -9,7 +9,8 @@ class CatTest {
 	@Test
 	void test() {
 		String name = "test";
-		assertTrue(new Cat(name).getName().equals(name));
+		Animal cat = new Cat(name);
+		assertTrue(cat instanceof Cat);
 	}
 
 }
