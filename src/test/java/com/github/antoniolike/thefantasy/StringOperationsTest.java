@@ -25,5 +25,9 @@ class StringOperationsTest {
 		assertFalse(StringOperations.arePalindromesIgnoreNonAlphaNumeric("ads", "das1"));
 		assertTrue(StringOperations.arePalindromesIgnoreNonAlphaNumeric("ab!1<@£§1  ", "11ba-"));
 	}
-
+	
+	@Test
+	void concatenateStringsTest() {
+		assertTrue("This is just a test!".equals(StringOperations.concatenateStrings(new String[] {"This ", "is ", "just ", "a test!"})));
+	}
 }

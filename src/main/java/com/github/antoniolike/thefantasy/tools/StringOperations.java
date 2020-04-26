@@ -32,5 +32,16 @@ public class StringOperations {
 	public static boolean arePalindromesIgnoreNonAlphaNumeric(String a, String b) {
 		return arePalindromes(a.replaceAll("[^a-zA-Z0-9_]", ""), b.replaceAll("[^a-zA-Z0-9_]", ""));
 	}
+
+	public static String concatenateStrings(String[] strings) {
+		if(strings == null || strings.length == 0)
+			return null;
+		StringBuilder sb = new StringBuilder();
+		for(String s:strings) {
+			sb.append(s);
+		}
+		return sb.toString();
+	}
+	
 	
 }
