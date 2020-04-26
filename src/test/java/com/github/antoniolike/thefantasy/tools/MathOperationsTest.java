@@ -1,11 +1,8 @@
-package com.github.antoniolike.thefantasy;
+package com.github.antoniolike.thefantasy.tools;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-
-import com.github.antoniolike.thefantasy.tools.ArraysOperations;
-import com.github.antoniolike.thefantasy.tools.MathOperations;
 
 class MathOperationsTest {
 

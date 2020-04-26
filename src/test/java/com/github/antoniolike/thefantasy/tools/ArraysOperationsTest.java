@@ -1,12 +1,10 @@
-package com.github.antoniolike.thefantasy;
+package com.github.antoniolike.thefantasy.tools;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
-
-import com.github.antoniolike.thefantasy.tools.ArraysOperations;
 
 class ArraysOperationsTest {
 
