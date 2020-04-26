@@ -8,11 +8,13 @@ public class Animal implements Eats{
 		return name;
 	}
 
-	public void setName(String name) {
+	public void setName(String name) throws Exception {
+		if(name==null||name.length()==0)
+			throw new Exception("The name can't be null or empty.");
 		this.name = name;
 	}
 
-	public Animal(String name) {
+	public Animal(String name) throws Exception {
 		this(name, 1);
 	}
 
@@ -20,23 +22,26 @@ public class Animal implements Eats{
 		return this.weight;
 	}
 
-	public void setWeight(double weight) {
+	public void setWeight(double weight) throws Exception {
+		if(weight<=0)
+			throw new Exception("Weight must be positive.");
 		this.weight = weight;
 	}
 
-	public Animal(String name, double weight) {
+	public Animal(String name, double weight) throws Exception {
 		super();
 		setName(name);
-		setWeight(weight);;
+		setWeight(weight);
+		
 	}
 
 	@Override
-	public void eat(double mass) {
+	public void eat(double mass) throws Exception {
 		setWeight(getWeight()+mass);
 	}
 
 	@Override
-	public void expel(double mass) {
+	public void expel(double mass) throws Exception {
 		if(mass<=0)
 			setWeight(getWeight()+mass);
 		else

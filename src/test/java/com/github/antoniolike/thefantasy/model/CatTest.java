@@ -9,7 +9,13 @@ class CatTest {
 	@Test
 	void test() {
 		String name = "test";
-		Animal cat = new Cat(name);
+		Animal cat=null;
+		try {
+			cat = new Cat(name);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		assertTrue(cat instanceof Cat);
 	}
 

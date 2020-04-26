@@ -9,7 +9,12 @@ class DogTest {
 	@Test
 	void Dog() {
 		String name = "test";
-		Animal dog = new Dog(name);
+		Animal dog = null;
+		try {
+			dog = new Dog(name);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		assertTrue(dog instanceof Dog);	}
 
 }
