@@ -24,4 +24,26 @@ public class ArraysOperations {
 	public static void sort(int[] array) {
 		Arrays.sort(array);
 	}
+	
+	public static double max(double[] array) {
+		if(array == null || array.length==0)
+			throw new RuntimeException("Not a valid array");
+		
+		double maxValue=array[0];
+		for(double d:array)
+			if(d>maxValue)
+				maxValue = d;
+		return maxValue;
+	}
+	
+	public static double min(double[] array) {
+		if(array == null || array.length==0)
+			throw new RuntimeException("Not a valid array");
+		
+		double minValue=array[0];
+		for(double d:array)
+			if(d<minValue)
+				minValue = d;
+		return minValue;
+	}
 }

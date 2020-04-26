@@ -22,5 +22,14 @@ class ArraysOperationsTest {
 		ArraysOperations.sort(array);
 		assertTrue(Arrays.equals(array,new int[]{1,2,3,5}));
 	}
-
+	
+	@Test
+	void testMaxDoubleArray() {
+		assertTrue(ArraysOperations.min(new double[]{1.1,-3,-5.5})==1.1);
+	}
+	
+	@Test
+	void testMinDoubleArray() {
+		assertTrue(ArraysOperations.min(new double[]{1.1,-3,-5.5})==-5.5);
+	}
 }
