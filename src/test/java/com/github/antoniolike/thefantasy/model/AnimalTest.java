@@ -98,4 +98,21 @@ class AnimalTest {
 		
 	}
 
+	@Test
+	void testAnimalStringDoubleColor() {
+		String name = "test";
+		double weight = 10;
+		Animal animal = null;
+		try {
+			animal = new Animal(name,weight,Color.values()[0]);
+		assertTrue(animal.getWeight()==weight);
+		assertTrue(animal.getName().equals(name));
+		assertTrue(animal.getColor().equals(Color.values()[0]));
+		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+	}
+	
 }
