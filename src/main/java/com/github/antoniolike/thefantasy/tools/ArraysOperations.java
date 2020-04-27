@@ -2,7 +2,7 @@ package com.github.antoniolike.thefantasy.tools;
 
 import java.util.Arrays;
 
-public class ArraysOperations {
+public abstract class ArraysOperations {
 	public static int[] productArray(int[] array) {
 		//For each element calculates the product of all the other elements and returns them in an array
 		int[] product = new int[array.length];

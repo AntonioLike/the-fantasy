@@ -1,6 +1,6 @@
 package com.github.antoniolike.thefantasy.tools;
 
-public class MathOperations {
+public abstract class MathOperations {
 	public static double[] randomArrayOfNumbers(double smallest, double highest, int size) {
 		double[] randomArray = new double[size];
 		for(int i=0; i<size;i++)

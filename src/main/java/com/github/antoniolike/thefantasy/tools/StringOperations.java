@@ -2,7 +2,7 @@ package com.github.antoniolike.thefantasy.tools;
 
 import java.util.Arrays;
 
-public class StringOperations {
+public abstract class StringOperations {
 	
 	public static boolean areAnadromes(String a, String b) {
 		if(a != null && b != null && a.length()==b.length()) {
