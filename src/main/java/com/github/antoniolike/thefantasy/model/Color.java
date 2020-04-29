@@ -1,6 +1,7 @@
 package com.github.antoniolike.thefantasy.model;
 
-public enum Color {
+public enum Color{
+	NoColor,
 	White,
 	Tan,
 	Yellow,

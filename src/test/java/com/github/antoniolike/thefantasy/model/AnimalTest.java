@@ -12,8 +12,8 @@ class AnimalTest {
 		try {
 			assertTrue(new Animal(name).getName().equals(name));
 		
-		assertThrows(Exception.class,()-> new Animal(null));
-		assertThrows(Exception.class,()-> new Animal(""));
+		assertThrows(IllegalArgumentException.class,()-> new Animal(null));
+		assertThrows(IllegalArgumentException.class,()-> new Animal(""));
 		
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -37,8 +37,8 @@ class AnimalTest {
 		}
 		
 		
-		assertThrows(Exception.class,()-> new Animal(name,0));
-		assertThrows(Exception.class,()-> new Animal(name,-1));
+		assertThrows(IllegalArgumentException.class,()-> new Animal(name,0));
+		assertThrows(IllegalArgumentException.class,()-> new Animal(name,-1));
 		
 	}
 	
@@ -90,7 +90,7 @@ class AnimalTest {
 		}
 		assertTrue(animal.getWeight()==weight-mass-mass);
 	
-		assertThrows(Exception.class,()-> animal.expel(animal.getWeight()));
+		assertThrows(IllegalArgumentException.class,()-> animal.expel(animal.getWeight()));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -104,10 +104,10 @@ class AnimalTest {
 		double weight = 10;
 		Animal animal = null;
 		try {
-			animal = new Animal(name,weight,Color.values()[0]);
+			animal = new Animal(name,weight,Color.NoColor);
 		assertTrue(animal.getWeight()==weight);
 		assertTrue(animal.getName().equals(name));
-		assertTrue(animal.getColor().equals(Color.values()[0]));
+		assertTrue(animal.getColor().equals(Color.NoColor));
 		
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

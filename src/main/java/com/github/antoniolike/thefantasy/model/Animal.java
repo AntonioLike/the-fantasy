@@ -1,19 +1,23 @@
 package com.github.antoniolike.thefantasy.model;
 
-public class Animal implements Eater{
+public class Animal implements Eater, Paintable{
 	private String name;
 	private double weight;
 	private Color color;
 
-	public Animal(String name) throws Exception {
+	public Animal() throws IllegalArgumentException{
+		this("unnamed");
+	}
+	
+	public Animal(String name) throws IllegalArgumentException {
 		this(name, 1);
 	}
 	
-	public Animal(String name, double weight) throws Exception {
-		this(name,weight,Color.values()[0]);		
+	public Animal(String name, double weight) throws IllegalArgumentException {
+		this(name,weight,Color.NoColor);		
 	}
 	
-	public Animal(String name, double weight, Color color) throws Exception{
+	public Animal(String name, double weight, Color color) throws IllegalArgumentException{
 		super();
 		setName(name);
 		setWeight(weight);
@@ -24,9 +28,9 @@ public class Animal implements Eater{
 		return name;
 	}
 
-	public void setName(String name) throws Exception {
+	public void setName(String name) throws IllegalArgumentException {
 		if(name==null||name.length()==0)
-			throw new Exception("The name can't be null or empty.");
+			throw new IllegalArgumentException("The name can't be null or empty.");
 		this.name = name;
 	}
 
@@ -36,21 +40,21 @@ public class Animal implements Eater{
 		return this.weight;
 	}
 
-	public void setWeight(double weight) throws Exception {
+	public void setWeight(double weight) throws IllegalArgumentException {
 		if(weight<=0)
-			throw new Exception("Weight must be positive.");
+			throw new IllegalArgumentException("Weight must be positive.");
 		this.weight = weight;
 	}
 
 	
 
 	@Override
-	public void eat(double mass) throws Exception {
+	public void eat(double mass) throws IllegalArgumentException {
 		setWeight(getWeight()+mass);
 	}
 
 	@Override
-	public void expel(double mass) throws Exception {
+	public void expel(double mass) throws IllegalArgumentException {
 		if(mass<=0)
 			setWeight(getWeight()+mass);
 		else

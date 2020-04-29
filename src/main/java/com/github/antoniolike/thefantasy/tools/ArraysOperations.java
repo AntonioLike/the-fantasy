@@ -27,7 +27,7 @@ public abstract class ArraysOperations {
 	
 	public static double max(double[] array) {
 		if(array == null || array.length==0)
-			throw new RuntimeException("Not a valid array");
+			throw new IllegalArgumentException("The array is null or its size is null");
 		
 		double maxValue=array[0];
 		for(double d:array)
@@ -38,7 +38,7 @@ public abstract class ArraysOperations {
 	
 	public static double min(double[] array) {
 		if(array == null || array.length==0)
-			throw new RuntimeException("Not a valid array");
+			throw new IllegalArgumentException("The array is null or its size is null");
 		
 		double minValue=array[0];
 		for(double d:array)
