@@ -10,11 +10,8 @@ class DogTest {
 	void Dog() {
 		String name = "test";
 		Animal dog = null;
-		try {
-			dog = new Dog(name);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+
+		dog = new Dog(name);
 		assertTrue(dog instanceof Dog);	}
 
 }

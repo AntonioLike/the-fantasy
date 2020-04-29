@@ -10,12 +10,7 @@ class CatTest {
 	void test() {
 		String name = "test";
 		Animal cat=null;
-		try {
-			cat = new Cat(name);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		cat = new Cat(name);
 		assertTrue(cat instanceof Cat);
 	}
 
