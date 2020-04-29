@@ -26,6 +26,8 @@ class StringOperationsTest {
 	
 	@Test
 	void concatenateStringsTest() {
-		assertTrue("This is just a test!".equals(StringOperations.concatenateStrings(new String[] {"This ", "is ", "just ", "a test!"})));
+		assertEquals("This is just a test!",StringOperations.concatenateStrings(new String[] {"This ", "is ", "just ", "a test!"}));
+		assertEquals("a test",StringOperations.concatenateStrings("a ", "test"));
+		assertEquals("test",StringOperations.concatenateStrings("test"));
 	}
 }

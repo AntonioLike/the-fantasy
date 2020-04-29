@@ -33,7 +33,7 @@ public abstract class StringOperations {
 		return arePalindromes(a.replaceAll("[^a-zA-Z0-9_]", ""), b.replaceAll("[^a-zA-Z0-9_]", ""));
 	}
 
-	public static String concatenateStrings(String[] strings) {
+	public static String concatenateStrings(String... strings) {
 		if(strings == null || strings.length == 0)
 			return null;
 		StringBuilder sb = new StringBuilder();
