@@ -1,7 +1,11 @@
-package com.github.antoniolike.thefantasy.model;
+package com.github.antoniolike.thefantasy.factory;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.github.antoniolike.thefantasy.model.Color;
+import com.github.antoniolike.thefantasy.model.Paintable;
+import com.github.antoniolike.thefantasy.model.PaintingMachine;
 
 public class PaintingFactory {
 	private List<PaintingMachine> paintingMachines;

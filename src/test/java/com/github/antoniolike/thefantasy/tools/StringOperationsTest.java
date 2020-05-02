@@ -30,4 +30,11 @@ class StringOperationsTest {
 		assertEquals("a test",StringOperations.concatenateStrings("a ", "test"));
 		assertEquals("test",StringOperations.concatenateStrings("test"));
 	}
+	
+	@Test
+	void concatenateStringsPlusFinalDotTest() {
+		assertEquals("This is just a test.",StringOperations.concatenateStringsPlusFinalDot(new String[] {"This ", "is ", "just ", "a test"}));
+		assertEquals("a test.",StringOperations.concatenateStringsPlusFinalDot("a ", "test"));
+		assertEquals("test.",StringOperations.concatenateStringsPlusFinalDot("test"));	
+	}
 }

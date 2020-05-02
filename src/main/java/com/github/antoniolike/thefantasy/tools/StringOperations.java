@@ -43,5 +43,9 @@ public abstract class StringOperations {
 		return sb.toString();
 	}
 	
+	public static String concatenateStringsPlusFinalDot(String ...strings) {
+		return concatenateStrings(strings) + ".";
+	}
+	
 	
 }

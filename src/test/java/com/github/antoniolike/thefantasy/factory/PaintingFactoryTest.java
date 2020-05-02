@@ -1,4 +1,4 @@
-package com.github.antoniolike.thefantasy.model;
+package com.github.antoniolike.thefantasy.factory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+
+import com.github.antoniolike.thefantasy.model.Color;
+import com.github.antoniolike.thefantasy.model.Paintable;
+import com.github.antoniolike.thefantasy.model.Wall;
 
 class PaintingFactoryTest {
 
