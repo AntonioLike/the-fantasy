@@ -1,4 +1,4 @@
-package com.github.antoniolike.thefantasy.model;
+package com.github.antoniolike.thefantasy.model.beings;
 
 public interface Eater {
 	public void eat(double mass) throws IllegalArgumentException;

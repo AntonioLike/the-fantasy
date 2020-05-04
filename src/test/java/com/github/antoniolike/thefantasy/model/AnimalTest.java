@@ -4,6 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import com.github.antoniolike.thefantasy.model.beings.Animal;
+import com.github.antoniolike.thefantasy.model.painting.Color;
+
 class AnimalTest {
 
 	@Test
@@ -73,10 +76,10 @@ class AnimalTest {
 		double weight = 10;
 		Animal animal = null;
 
-		animal = new Animal(name,weight,Color.NoColor);
+		animal = new Animal(name,weight,Color.NOCOLOR);
 		assertTrue(animal.getWeight()==weight);
 		assertTrue(animal.getName().equals(name));
-		assertTrue(animal.getColor().equals(Color.NoColor));
+		assertTrue(animal.getColor().equals(Color.NOCOLOR));
 	}
 
 }

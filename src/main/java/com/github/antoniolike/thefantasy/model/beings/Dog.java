@@ -1,4 +1,4 @@
-package com.github.antoniolike.thefantasy.model;
+package com.github.antoniolike.thefantasy.model.beings;
 
 public class Dog extends Animal {
 

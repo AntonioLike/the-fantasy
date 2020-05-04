@@ -4,6 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import com.github.antoniolike.thefantasy.model.beings.Animal;
+import com.github.antoniolike.thefantasy.model.beings.Dog;
+
 class DogTest {
 
 	@Test

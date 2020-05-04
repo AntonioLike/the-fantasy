@@ -1,7 +1,7 @@
 package com.github.antoniolike.thefantasy.model.occupation;
 
-import com.github.antoniolike.thefantasy.model.Color;
-import com.github.antoniolike.thefantasy.model.Paintable;
+import com.github.antoniolike.thefantasy.model.painting.Color;
+import com.github.antoniolike.thefantasy.model.painting.Paintable;
 
 public class Painter implements Occupation<Paintable, Color>{
 	@Override

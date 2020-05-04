@@ -1,8 +1,11 @@
 package com.github.antoniolike.thefantasy.controller;
 
-import com.github.antoniolike.thefantasy.factory.PaintingFactory;
-import com.github.antoniolike.thefantasy.model.Color;
-import com.github.antoniolike.thefantasy.model.Paintable;
+import com.github.antoniolike.thefantasy.factory.FactoryProducer;
+import com.github.antoniolike.thefantasy.model.painting.Color;
+import com.github.antoniolike.thefantasy.model.painting.Paintable;
+import com.github.antoniolike.thefantasy.model.painting.PaintingHouse;
+import com.github.antoniolike.thefantasy.model.painting.design.Cartridge;
+import com.github.antoniolike.thefantasy.model.painting.design.Design;
 import com.github.antoniolike.thefantasy.service.PainterService;
 
 public class PaintingController {
@@ -13,14 +16,14 @@ public class PaintingController {
 		this.painterService = painterService;
 	}
 
-	public void choosePaintingMethod(boolean paintType, Paintable paintable, Color color) {
+	public void choosePaintingMethod(boolean paintType, Paintable paintable, Color color, Design design) {
 		if(paintType)
-			paintByMachine(paintable, color);
+			paintByMachine(paintable, FactoryProducer.getFactory(design).getCartridge(color));
 		paintManually(paintable,color);
 	}
 	
-	private void paintByMachine(Paintable paintable, Color color) {
-		PaintingFactory.getInstance().runPaintingMachine(paintable, color);
+	private void paintByMachine(Paintable paintable, Cartridge cartridge) {
+		PaintingHouse.getInstance().runPaintingMachine(paintable, cartridge);
 	}
 	
 	private void paintManually(Paintable paintable, Color color) {

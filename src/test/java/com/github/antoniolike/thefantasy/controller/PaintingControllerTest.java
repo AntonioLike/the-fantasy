@@ -7,10 +7,11 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import com.github.antoniolike.thefantasy.model.Color;
-import com.github.antoniolike.thefantasy.model.Paintable;
-import com.github.antoniolike.thefantasy.model.Wall;
 import com.github.antoniolike.thefantasy.model.occupation.Painter;
+import com.github.antoniolike.thefantasy.model.painting.Color;
+import com.github.antoniolike.thefantasy.model.painting.Paintable;
+import com.github.antoniolike.thefantasy.model.painting.Wall;
+import com.github.antoniolike.thefantasy.model.painting.design.Design;
 import com.github.antoniolike.thefantasy.service.PainterService;
 
 class PaintingControllerTest {
@@ -28,16 +29,21 @@ class PaintingControllerTest {
 		ps.setPainters(painters);
 		pc.setPainterService(ps);
 		
-		boolean paintType = true;
-		Paintable paintable = new Wall(Color.NoColor);
-		Color color = Color.Black;
+		boolean paintByMachine = true;
+		Paintable paintable = new Wall(Color.NOCOLOR);
+		Color color = Color.BLACK;
+		Design design = Design.LINE;
 		
-		pc.choosePaintingMethod(paintType, paintable, color);
+		pc.choosePaintingMethod(paintByMachine, paintable, color, design);
 		assertEquals(color, paintable.getColor());
+		assertEquals(design, paintable.getDesign());
 		
-		color = Color.Blue;
-		pc.choosePaintingMethod(!paintType, paintable, color);
+		color = Color.BLUE;
+		Design newDesign = Design.SOLID;
+		pc.choosePaintingMethod(!paintByMachine, paintable, color, newDesign);
 		assertEquals(color, paintable.getColor());
+		//Human Painter only changes color
+		assertEquals(design, paintable.getDesign());
 	}
 
 }

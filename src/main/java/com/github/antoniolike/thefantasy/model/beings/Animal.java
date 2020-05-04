@@ -1,6 +1,8 @@
-package com.github.antoniolike.thefantasy.model;
+package com.github.antoniolike.thefantasy.model.beings;
 
-public class Animal implements Eater, Paintable{
+import com.github.antoniolike.thefantasy.model.painting.Color;
+
+public class Animal implements Eater{
 	private String name;
 	private double weight;
 	private Color color;
@@ -14,7 +16,7 @@ public class Animal implements Eater, Paintable{
 	}
 	
 	public Animal(String name, double weight) throws IllegalArgumentException {
-		this(name,weight,Color.NoColor);		
+		this(name,weight,Color.NOCOLOR);		
 	}
 	
 	public Animal(String name, double weight, Color color) throws IllegalArgumentException{

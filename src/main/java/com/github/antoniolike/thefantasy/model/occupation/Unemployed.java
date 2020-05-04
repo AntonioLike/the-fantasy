@@ -1,6 +1,6 @@
 package com.github.antoniolike.thefantasy.model.occupation;
 
-import com.github.antoniolike.thefantasy.model.Person;
+import com.github.antoniolike.thefantasy.model.beings.Person;
 
 public class Unemployed implements Occupation<Person, String> {
 

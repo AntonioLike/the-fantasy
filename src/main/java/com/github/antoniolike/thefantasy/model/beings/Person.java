@@ -1,7 +1,8 @@
-package com.github.antoniolike.thefantasy.model;
+package com.github.antoniolike.thefantasy.model.beings;
 
 import com.github.antoniolike.thefantasy.model.occupation.Occupation;
 import com.github.antoniolike.thefantasy.model.occupation.Unemployed;
+import com.github.antoniolike.thefantasy.model.painting.Color;
 
 public class Person extends Animal{
 
@@ -16,7 +17,7 @@ public class Person extends Animal{
 	}	
 	
 	public Person(String name, double weight, Occupation<?, ?> occupation) throws IllegalArgumentException {
-		super(name, weight, Color.NoColor);
+		super(name, weight, Color.NOCOLOR);
 		this.occupation = occupation;
 	}
 	
