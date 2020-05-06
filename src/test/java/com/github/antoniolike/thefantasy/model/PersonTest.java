@@ -21,7 +21,7 @@ class PersonTest {
 		
 		Painter picassoSkill = new Painter();
 		Person picasso = new Person(name,weight,picassoSkill);
-		((Painter)(picasso.occupation)).works(wall, newColor);
+		((Painter)(picasso.getOccupation())).works(wall, newColor);
 		
 		assertEquals(newColor, wall.getColor());
 	}

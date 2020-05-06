@@ -6,7 +6,7 @@ import com.github.antoniolike.thefantasy.model.painting.Color;
 
 public class Person extends Animal{
 
-	public Occupation<?,?> occupation;
+	private Occupation<?,?> occupation;	
 	
 	public Person() throws IllegalArgumentException {
 		super();
@@ -18,6 +18,14 @@ public class Person extends Animal{
 	
 	public Person(String name, double weight, Occupation<?, ?> occupation) throws IllegalArgumentException {
 		super(name, weight, Color.NOCOLOR);
+		this.setOccupation(occupation);
+	}
+
+	public Occupation<?,?> getOccupation() {
+		return occupation;
+	}
+
+	public void setOccupation(Occupation<?,?> occupation) {
 		this.occupation = occupation;
 	}
 	

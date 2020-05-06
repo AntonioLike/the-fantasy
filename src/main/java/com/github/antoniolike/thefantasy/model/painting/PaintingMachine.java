@@ -4,8 +4,8 @@ import com.github.antoniolike.thefantasy.model.painting.design.Cartridge;
 
 public class PaintingMachine extends Thread{
 	
-	Paintable paintable;
-	Cartridge cartridge;
+	private Paintable paintable;
+	private Cartridge cartridge;
 	
 	private void paints() {
 		paintable.setColor(cartridge.getColor());
