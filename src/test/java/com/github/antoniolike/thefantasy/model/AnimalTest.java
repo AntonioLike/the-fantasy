@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import com.github.antoniolike.thefantasy.model.beings.Animal;
+import com.github.antoniolike.thefantasy.model.beings.Cat;
+import com.github.antoniolike.thefantasy.model.beings.Dog;
 import com.github.antoniolike.thefantasy.model.painting.Color;
 
 class AnimalTest {
@@ -13,10 +15,10 @@ class AnimalTest {
 	void testAnimalString() {
 		String name = "test";
 
-		assertTrue(new Animal(name).getName().equals(name));
+		assertTrue(new Dog(name).getName().equals(name));
 
-		assertThrows(IllegalArgumentException.class,()-> new Animal(null));
-		assertThrows(IllegalArgumentException.class,()-> new Animal(""));
+		assertThrows(IllegalArgumentException.class,()-> new Cat(null));
+		assertThrows(IllegalArgumentException.class,()-> new Cat(""));
 
 	}
 
@@ -26,13 +28,13 @@ class AnimalTest {
 		double weight = 10;
 		Animal animal = null;
 
-		animal = new Animal(name,weight);
+		animal = new Dog(name,weight);
 		assertTrue(animal.getWeight()==weight);
 		assertTrue(animal.getName().equals(name));
 
 
-		assertThrows(IllegalArgumentException.class,()-> new Animal(name,0));
-		assertThrows(IllegalArgumentException.class,()-> new Animal(name,-1));
+		assertThrows(IllegalArgumentException.class,()-> new Dog(name,0));
+		assertThrows(IllegalArgumentException.class,()-> new Cat(name,-1));
 
 	}
 
@@ -41,7 +43,7 @@ class AnimalTest {
 		String name = "test";
 		double weight = 10;
 		Animal animal = null;
-		animal = new Animal(name,weight);
+		animal = new Dog(name,weight);
 		double mass = 5;
 		animal.eat(mass);
 		assertTrue(animal.getWeight()==weight+mass);
@@ -57,7 +59,7 @@ class AnimalTest {
 
 		final Animal animal;
 
-		animal = new Animal(name,weight);
+		animal = new Cat(name,weight);
 		double mass = 2;
 		animal.expel(mass);
 
@@ -76,7 +78,7 @@ class AnimalTest {
 		double weight = 10;
 		Animal animal = null;
 
-		animal = new Animal(name,weight,Color.NOCOLOR);
+		animal = new Dog(name,weight,Color.NOCOLOR);
 		assertTrue(animal.getWeight()==weight);
 		assertTrue(animal.getName().equals(name));
 		assertTrue(animal.getColor().equals(Color.NOCOLOR));

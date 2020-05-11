@@ -29,6 +29,17 @@ public class Person extends Animal implements ActionableObject{
 	public void setOccupation(Occupation<?,?> occupation) {
 		this.occupation = occupation;
 	}
+
+	@Override
+	public String speaks() {
+		return present();
+	}
+	
+	public String present() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("My name is ").append(getName()).append(". I'm ").append(" years old, I weigh ").append(getWeight()).append(" and I'm.");
+		return sb.toString();
+	}
 	
 
 }

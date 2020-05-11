@@ -2,7 +2,7 @@ package com.github.antoniolike.thefantasy.model.beings;
 
 import com.github.antoniolike.thefantasy.model.painting.Color;
 
-public class Animal implements Eater{
+public abstract class Animal implements Eater{
 	private String name;
 	private double weight;
 	private Color color;
@@ -72,4 +72,5 @@ public class Animal implements Eater{
 		this.color = color;
 	}	
 	
+	public abstract String speaks();
 }
