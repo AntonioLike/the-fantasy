@@ -73,4 +73,9 @@ public abstract class Animal implements Eater{
 	}	
 	
 	public abstract String speaks();
+	
+	@Override
+	public String toString() {
+		return getName();
+	}
 }

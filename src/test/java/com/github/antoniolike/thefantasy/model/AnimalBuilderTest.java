@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.InvalidClassException;
 import java.lang.reflect.InvocationTargetException;
-import java.security.InvalidParameterException;
 
 import org.junit.jupiter.api.Test;
 
@@ -38,9 +37,7 @@ class AnimalBuilderTest {
 		assertEquals(species,animal.getClass());
 		assertEquals(name, animal.getName());
 		assertEquals(weight, animal.getWeight());
-		assertEquals(color, animal.getColor());
-		
-		
+		assertEquals(color, animal.getColor());	
 		
 	}
 
