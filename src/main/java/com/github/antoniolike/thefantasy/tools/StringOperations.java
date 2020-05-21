@@ -33,19 +33,25 @@ public abstract class StringOperations {
 		return arePalindromes(a.replaceAll("[^a-zA-Z0-9_]", ""), b.replaceAll("[^a-zA-Z0-9_]", ""));
 	}
 
-	public static String concatenateStrings(String... strings) {
-		if(strings == null || strings.length == 0)
+	public static String concatenateStringsDelimitator(String delimitator, String ...strings) {
+		if(strings == null || delimitator==null || delimitator.length() == 0|| strings.length == 0)
 			return null;
 		StringBuilder sb = new StringBuilder();
 		for(String s:strings) {
-			sb.append(s);
+			sb.append(s).append(delimitator);
 		}
-		return sb.toString();
+		return sb.delete(sb.length()-delimitator.length()-1, sb.length()-1).toString();		
+	}
+	
+	public static String concatenateStrings(String... strings) {
+		return concatenateStringsDelimitator("",strings);
 	}
 	
 	public static String concatenateStringsPlusFinalDot(String ...strings) {
 		return concatenateStrings(strings) + ".";
 	}
+	
+	
 	
 	
 }
