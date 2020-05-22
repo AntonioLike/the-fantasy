@@ -24,6 +24,10 @@ public class Wall implements Paintable{
 		this.design = design;
 	}
 	
+	public Wall() {
+		this(Color.WHITE);
+	}
+
 	public Design getDesign() {
 		return design;
 	}

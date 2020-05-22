@@ -34,17 +34,24 @@ public abstract class StringOperations {
 	}
 
 	public static String concatenateStringsDelimitator(String delimitator, String ...strings) {
-		if(strings == null || delimitator==null || delimitator.length() == 0|| strings.length == 0)
+		if(strings == null || strings.length == 0)
 			return null;
 		StringBuilder sb = new StringBuilder();
-		for(String s:strings) {
-			sb.append(s).append(delimitator);
+		if(delimitator==null || delimitator.length()==0)
+			for(String s:strings) 
+				sb.append(s);
+		else {
+			for(String s:strings) {
+				sb.append(s).append(delimitator);
+			}
+			sb.delete(sb.length()-delimitator.length()-1, sb.length()-1);
 		}
-		return sb.delete(sb.length()-delimitator.length()-1, sb.length()-1).toString();		
+		
+		return sb.toString();
 	}
 	
 	public static String concatenateStrings(String... strings) {
-		return concatenateStringsDelimitator("",strings);
+		return concatenateStringsDelimitator(null,strings);
 	}
 	
 	public static String concatenateStringsPlusFinalDot(String ...strings) {

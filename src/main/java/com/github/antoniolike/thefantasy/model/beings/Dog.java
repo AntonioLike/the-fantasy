@@ -2,7 +2,7 @@ package com.github.antoniolike.thefantasy.model.beings;
 
 import com.github.antoniolike.thefantasy.model.painting.Color;
 
-public class Dog extends Animal {
+public class Dog extends Animal implements Pet{
 
 	public Dog() {
 		super();

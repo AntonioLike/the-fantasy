@@ -27,4 +27,5 @@ public class PaintingMachine extends Thread{
 		this.cartridge = cartridge;
 		this.run();		
 	}
+
 }

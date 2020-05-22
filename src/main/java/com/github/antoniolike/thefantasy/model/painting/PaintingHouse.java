@@ -11,10 +11,12 @@ public class PaintingHouse {
 	private static PaintingHouse paintingFactory;
 	private int nextMachine;
 	private final int numberMachines = 10;
+	private List <PaintingOrder> orders;
 	
 	private PaintingHouse() {
 		nextMachine = 0;
 		paintingMachines = new ArrayList<PaintingMachine>();
+		orders = new ArrayList<PaintingOrder>();
 		for(int i = 0; i< numberMachines; i++) {
 			paintingMachines.add(new PaintingMachine());
 		}
@@ -25,6 +27,16 @@ public class PaintingHouse {
 		if(paintingFactory == null)
 			paintingFactory = new PaintingHouse();
 		return paintingFactory;
+	}
+	
+	public void addPaintingOrder(PaintingOrder order) {
+		orders.add(order);
+	}	
+	
+	public void runPaintingOrders() {
+		for(PaintingOrder order : orders)
+			order.paints();
+		orders.clear();
 	}
 	
 	public void runPaintingMachine(Paintable paintable, Cartridge cartridge) {

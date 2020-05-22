@@ -1,8 +1,6 @@
 package com.github.antoniolike.thefantasy.model.painting;
 
-import com.github.antoniolike.thefantasy.model.occupation.Action;
-
-public enum Color implements Action{
+public enum Color{
 	NOCOLOR,
 	WHITE,
 	TAN,
