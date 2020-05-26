@@ -15,7 +15,7 @@ class OccupationFactoryTest {
 
 	@Test
 	void testGetFlyOccupation() throws InvalidAttributeValueException {
-		OccupationFactory of = new OccupationFactory();
+		OccupationFactory of = OccupationFactory.getInstance();
 		Occupation<ActionableObject, Action> p1 = of.getFlyOccupation(EOccupation.PAINTER); 
 		Occupation<ActionableObject, Action> m1 = of.getFlyOccupation(EOccupation.MEDIC);
 		

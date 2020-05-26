@@ -15,6 +15,17 @@ import com.github.antoniolike.thefantasy.model.occupation.Unemployed;
 
 public class OccupationFactory {
 	private Map<EOccupation, Occupation<ActionableObject, Action>> occupations = new HashMap<EOccupation, Occupation<ActionableObject,Action>>();
+	private static OccupationFactory instance;
+	
+	private OccupationFactory() {
+		
+	}
+	
+	public static OccupationFactory getInstance() {
+		if(instance==null)
+			instance = new OccupationFactory();
+		return instance;
+	}
 	
 	public Occupation<ActionableObject, Action> getFlyOccupation(EOccupation occupationType) throws InvalidAttributeValueException{
 		if(occupations.containsKey(occupationType))
