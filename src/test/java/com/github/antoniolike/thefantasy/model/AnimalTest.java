@@ -7,6 +7,9 @@ import org.junit.jupiter.api.Test;
 import com.github.antoniolike.thefantasy.model.beings.Animal;
 import com.github.antoniolike.thefantasy.model.beings.Cat;
 import com.github.antoniolike.thefantasy.model.beings.Dog;
+import com.github.antoniolike.thefantasy.model.beings.MovementType;
+import com.github.antoniolike.thefantasy.model.beings.Moving;
+import com.github.antoniolike.thefantasy.model.beings.Stopped;
 import com.github.antoniolike.thefantasy.model.painting.Color;
 
 class AnimalTest {
@@ -82,6 +85,16 @@ class AnimalTest {
 		assertTrue(animal.getWeight()==weight);
 		assertTrue(animal.getName().equals(name));
 		assertTrue(animal.getColor().equals(Color.NOCOLOR));
+	}
+	
+	@Test
+	void testMove() {
+		Dog dog = new Dog();
+		assertEquals(MovementType.STOPPED, dog.move());
+		dog.setState(new Moving());
+		assertEquals(MovementType.MOVING, dog.move());
+		dog.setState(new Stopped());
+		assertEquals(MovementType.STOPPED, dog.move());
 	}
 
 }

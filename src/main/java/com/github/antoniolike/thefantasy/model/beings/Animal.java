@@ -6,6 +6,7 @@ public abstract class Animal implements Eater,Speaker{
 	private String name;
 	private double weight;
 	private Color color;
+	private MovementState movementState;
 
 	public Animal() throws IllegalArgumentException{
 		this("unnamed");
@@ -24,6 +25,7 @@ public abstract class Animal implements Eater,Speaker{
 		setName(name);
 		setWeight(weight);
 		setColor(color);
+		setState(new Stopped());
 	}
 	
 	public String getName() {
@@ -77,4 +79,17 @@ public abstract class Animal implements Eater,Speaker{
 	public String toString() {
 		return getName();
 	}
+	
+	public MovementState getState() {
+		return movementState;
+	}
+
+	public void setState(MovementState state) {
+		this.movementState = state;
+	}
+	
+	public MovementType move() {
+		return movementState.action(this);
+	}
+
 }
